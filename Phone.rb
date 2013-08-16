@@ -5,13 +5,13 @@ class Phone
   end
 
   def clean_number
-    @number.gsub(/\D/, "")
+    @number = @number.gsub(/\D/, "")
   end
 
   def number
     self.clean_number
     if @number.length == 10
-      @number
+      return @number
     elsif @number.length == 11 && @number[0] == "1"
       @number[0] = ''
       @number
